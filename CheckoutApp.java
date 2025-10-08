@@ -1,11 +1,11 @@
 public class CheckoutApp {
     public static void main(String[] args) {
-        CheckoutService checkoutService = new CheckoutService();
+        CheckoutService checkout = new CheckoutService();
         double amount = 150.75;
 
-        checkoutService.checkout(PaymentMode.PAYPAL, amount);
-        checkoutService.checkout(PaymentMode.GOOGLEPAY, amount);
-        checkoutService.checkout(PaymentMode.CREDITCARD, amount);
-        checkoutService.checkout(null, amount);
+        checkout.checkout(PaymentMode.PAYPAL, amount);
+        checkout.checkout(PaymentMode.GOOGLEPAY, amount);
+        checkout.checkout(PaymentMode.CREDITCARD, amount);
+        checkout.checkout(null, amount);  
     }
 }
