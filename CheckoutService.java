@@ -12,16 +12,16 @@ public class CheckoutService {
     }
 
     public void checkout(PaymentMode mode, double amount) {
+        if (mode == null) {
+            System.out.println("Invalid payment mode selected!");
+            return;
+        }
+
         PaymentProcessor processor = paymentProcessors.get(mode);
         if (processor != null) {
             processor.processPayment(amount);
         } else {
             System.out.println("Invalid payment mode selected!");
         }
-    }
-
-    // Optional for registering custom processors (e.g., mock)
-    public void registerProcessor(PaymentMode mode, PaymentProcessor processor) {
-        paymentProcessors.put(mode, processor);
     }
 }
